@@ -51,7 +51,7 @@ class Nutrition(models.Model):
 
 class Allergy(models.Model):
   name = models.CharField(max_length=45, null=True)
-  products = models.ManyToManyField(Product)
+  products = models.ManyToManyField(Product, related_name='allergies')
 
   class Meta:
     db_table = 'allergies'
